@@ -1,0 +1,47 @@
+.header {
+    padding-top: 100px;
+    display: flex;
+    justify-content: space-between;
+
+    .left_side {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        img {
+            width: 80px;
+            height: 80px;
+        }
+
+        h1 {
+            max-width: 600px;
+            font-size: 5rem;
+            font-weight: 100;
+        }
+
+        p {
+            font-size: 1.2rem;
+        }
+
+        .btns {
+            display: flex;
+            gap: 2.5rem;
+
+            .about_us {
+                @extend %button1;
+            }
+
+            .contact_us {
+                @extend %button2;
+            }
+        }
+    }
+
+    .right_side {
+        img{
+            width: 550px;
+            height: 550px;
+            border-radius: 50%;
+        }
+    }
+}

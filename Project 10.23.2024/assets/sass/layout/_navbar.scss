@@ -1,0 +1,25 @@
+.navbar{
+    @include flexBox();
+    padding: 30px 0;
+
+    ul{
+        @include flexBox();
+        gap: 2rem;
+
+        li{
+            a{
+                color: $text_black;
+                font-size: 1.1rem;
+                &:hover{
+                    color: $primary_color;
+                }
+            }
+        }
+    }
+    .number{
+        font-size: 1.5rem;
+        i{
+            color: $secondary_color;
+        }
+    }
+}
