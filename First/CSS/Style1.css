@@ -1,0 +1,19 @@
+.book{
+    background-color: red;
+}
+#pen{
+    color: green;
+}
+
+.items div p:first-child{
+    color: yellow;
+}
+#animal span{
+    background-color: purple;
+}
+.animal{
+    color: blue;
+}
+.items div .parag{
+    background-color: green;
+}

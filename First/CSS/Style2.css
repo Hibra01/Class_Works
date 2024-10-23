@@ -1,0 +1,10 @@
+.items div+span{
+    background-color: red;
+}
+
+.items div ~ span{
+    color: blue;
+}
+ul li:first-child{
+    background-color: gold;
+}
