@@ -147,20 +147,25 @@ let moneyForMonth = 0;
 let maxPrice = 10 * salary;
 let maxMoneyForMonth = salary * 45 / 100;
 
-if (time > 0 && time <= 36) {
+if (time > 0 && time <= 36 && price <= maxPrice) {
     if (time <= 12) {
         f = 13;
     }
     else if (time > 12 && time <= 24) {
         f = 15;
     }
-    else if (time > 24 && time <= 36) {
+    else {
         f = 17;
     }
 
-    moneyForMonth = (price + price * f) / time;
+    moneyForMonth = (price + price * f / 100) / time;
+
+    if (moneyForMonth < maxMoneyForMonth) {
+        alert(price + " AZN size " + f + " %-le " + time + " ay muddetine ayliq " + moneyForMonth + " AZN olaraq verilecek.");
+    } else {
+        alert("Sertler qarsilanmir.")
+    }
 }
-else{
-    alert("Size kredit dusmur!");
+else {
+    alert("Sertler qarsilanmir.");
 }
-alert(price + " qeder mebleg size " + f +" %-le " + time + " muddetine ayliq " + moneyForMonth + " olaraq verilecek");
