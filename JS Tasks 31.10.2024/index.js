@@ -98,10 +98,9 @@ let array3 = [];
 let a = prompt("a = ");
 let b = prompt("b = ");
 
-function changer(array, a1, b1) {
-    return array;
-}
-
 array3 = changer(array2);
+
+function changer(array, a1, b1) {
+}
 
 console.log(array3);
