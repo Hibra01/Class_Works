@@ -114,7 +114,7 @@
 // }else if(c > a && c > b){
 //     maxNum = c;
 // }else{
-//     maxNum = "Berberdirler";
+//     maxNum = "Beraberdirler";
 // }
 
 // alert(maxNum);
