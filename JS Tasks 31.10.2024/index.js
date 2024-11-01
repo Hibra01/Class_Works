@@ -89,18 +89,19 @@
 
 // Task6
 
-let array1 = prompt("array = ");
-let array2 = array1.split(",");
-console.log(array2);
+// let array1 = prompt("array = ");
+// let array2 = array1.split(",");
+// console.log(array2);
 
-let array3 = [];
+let array = ["Apple", "Banana", "Watermelon", "Poatao", "Domato"];
 
-let a = prompt("a = ");
-let b = prompt("b = ");
+let a = 1;
+let b = 0;
 
-array3 = changer(array2);
-
-function changer(array, a1, b1) {
+function Changer(array, a1, b1) {
+    array.splice(a1, b1, "Year");
 }
 
-console.log(array3);
+Changer(array, a, b);
+
+console.log(array);
