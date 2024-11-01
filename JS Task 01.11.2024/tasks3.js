@@ -187,34 +187,33 @@
 // let a = [12,32,34,56,342,23];
 // let length = a.length;
 
-// function Calculate(a, length){
+// function Calculate(a){
 //     let sum = 0;
 
-//     for(let i = 0; i < length; i++){
+//     for(let i = 0; i < a.length; i++){
 //         sum += a[i];
 //     }
 
 //     return sum;
 // }
 
-// console.log(Calculate(a, length));
+// console.log(Calculate(a));
 
 // 13. Tərs Array
 // Bir array-i tərsinə çevirən bir funksiya yaradın.
 
 // let array = [12,23,43,56,76,23];
-// let length = array.length;
 
-// function Calculate(array, length){
+// function Calculate(array){
 //     let newArray = [];
-//     for(let i = length - 1; i >= 0; i--){
+//     for(let i = array.length - 1; i >= 0; i--){
 //         newArray.push(array[i]);
 //     }
 
 //     return newArray;
 // }
 
-// console.log(Calculate(array, length));
+// console.log(Calculate(array));
 
 // 14. Tələbə Qiymətləri
 // Tələbələrin qiymətlərini qəbul edən və 60-dan yuxarı olan tələbələri "keçdi", 60-dan aşağı olanları "qaldı" yazan bir funksiya yaradın.
