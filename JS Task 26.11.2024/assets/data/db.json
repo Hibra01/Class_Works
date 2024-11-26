@@ -1,0 +1,135 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "John Doe",
+      "email": "johndoe@example.com",
+      "password": "hashed_password",
+      "role": "user",
+      "profilePicture": "https://example.com/profile.jpg&quot;",
+      "createdAt": "2024-11-25",
+      "basket": [
+        {
+          "productId": 1,
+          "quantity": 2
+        },
+        {
+          "productId": 2,
+          "quantity": 1
+        }
+      ],
+      "favorites": [
+        {
+          "productId": 3
+        },
+        {
+          "productId": 1
+        }
+      ]
+    }
+  ],
+  "products": [
+    {
+      "id": "3",
+      "name": "Laptop Pro",
+      "description": "Powerful laptop for professional work and gaming.",
+      "price": 1499.99,
+      "stock": 30,
+      "discount": 15,
+      "categoryId": "3",
+      "image": "https://cdn.mos.cms.futurecdn.net/3kcgKLkfPRbskpsYzW239d-1200-80.jpg",
+      "createdAt": "2024-11-22"
+    },
+    {
+      "id": "2",
+      "name": "Smartphone Plus",
+      "description": "Flagship smartphone with all the latest features.",
+      "price": 899.99,
+      "stock": 50,
+      "discount": 10,
+      "categoryId": 3,
+      "image": "https://www.techadvisor.com/wp-content/uploads/2024/11/best-phones-2024-11.jpg?quality=50&strip=all&quot",
+      "createdAt": "2024-11-21"
+    },
+    {
+      "id": "1",
+      "name": "4K Television",
+      "description": "Ultra HD 4K television with vivid colors and clarity.",
+      "price": 899.99,
+      "stock": 25,
+      "discount": 25,
+      "categoryId": 2,
+      "image": "https://d3fppka8t5rpz7.cloudfront.net/filters:format(webp)/dev/images/81mLFIaCYwL._SL1500_.jpg",
+      "createdAt": "2024-11-18"
+    },
+    {
+      "id": "4",
+      "name": "Wireless Earbuds",
+      "description": "Compact and wireless earbuds with excellent sound quality.",
+      "price": 129.99,
+      "stock": 150,
+      "discount": 10,
+      "categoryId": 4,
+      "image": "https://images.squarespace-cdn.com/content/v1/5beb251ab40b9dd2724c2f46/509b8d66-bd62-4e1f-a48f-19bb532c9ec7/Soundcore+Life+A3i+vs+SoundPEATS+Mini+Pro+review.jpg&quot",
+      "createdAt": "2024-11-17"
+    },
+    {
+      "id": "b480",
+      "name": "dsf",
+      "description": "234",
+      "price": "324",
+      "stock": "234",
+      "disc": "234",
+      "categoryId": "1"
+    },
+    {
+      "id": "21bb",
+      "name": "yeni",
+      "description": "yeni",
+      "price": "2342",
+      "stock": "34",
+      "disc": "435",
+      "categoryId": "2"
+    },
+    {
+      "id": "9517",
+      "name": "ed",
+      "description": "345",
+      "price": "345",
+      "stock": "345",
+      "disc": "345",
+      "categoryId": "1"
+    },
+    {
+      "id": "85b0",
+      "name": "hallu",
+      "description": "hallu",
+      "price": "123",
+      "stock": "123",
+      "disc": "123",
+      "categoryId": "3"
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "name": "Electronics",
+      "createdAt": "2024-11-25"
+    },
+    {
+      "id": "2",
+      "name": "Smartphones",
+      "createdAt": "2024-11-25"
+    },
+    {
+      "id": "3",
+      "name": "Gaming",
+      "createdAt": "2024-11-25"
+    },
+    {
+      "id": "4",
+      "name": "Accessories",
+      "createdAt": "2024-11-25"
+    }
+  ]
+}
