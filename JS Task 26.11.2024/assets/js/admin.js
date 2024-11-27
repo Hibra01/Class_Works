@@ -1,4 +1,4 @@
-import { baseURL } from "./api/constants.js";
+import baseURL from "./api/constants.js";
 
 import { showTable } from "./api/services.js";
 
@@ -36,6 +36,7 @@ productForm.addEventListener("submit", function (event) {
         stock: stock,
         disc: disc,
         categoryId: category,
+        image: "https://cdn.mos.cms.futurecdn.net/3kcgKLkfPRbskpsYzW239d-1200-80.jpg",
     }
 
     addObject(newProduct);
@@ -52,7 +53,7 @@ async function addObject(obj) {
 }
 
 
-// getData();
+getData();
 
 async function getData() {
     const response = await axios.get(`${baseURL}/products`);

@@ -1,4 +1,4 @@
-import { baseURL } from "./api/constants.js";
+import baseURL from "./api/constants.js";
 
 import { showProducts } from "./api/services.js";
 

@@ -72,42 +72,6 @@
       "categoryId": 4,
       "image": "https://images.squarespace-cdn.com/content/v1/5beb251ab40b9dd2724c2f46/509b8d66-bd62-4e1f-a48f-19bb532c9ec7/Soundcore+Life+A3i+vs+SoundPEATS+Mini+Pro+review.jpg&quot",
       "createdAt": "2024-11-17"
-    },
-    {
-      "id": "b480",
-      "name": "dsf",
-      "description": "234",
-      "price": "324",
-      "stock": "234",
-      "disc": "234",
-      "categoryId": "1"
-    },
-    {
-      "id": "21bb",
-      "name": "yeni",
-      "description": "yeni",
-      "price": "2342",
-      "stock": "34",
-      "disc": "435",
-      "categoryId": "2"
-    },
-    {
-      "id": "9517",
-      "name": "ed",
-      "description": "345",
-      "price": "345",
-      "stock": "345",
-      "disc": "345",
-      "categoryId": "1"
-    },
-    {
-      "id": "85b0",
-      "name": "hallu",
-      "description": "hallu",
-      "price": "123",
-      "stock": "123",
-      "disc": "123",
-      "categoryId": "3"
     }
   ],
   "categories": [

@@ -1,3 +1,5 @@
+import baseURL from "./constants.js";
+
 const cardsArea = document.querySelector(".cards-area");
 
 const tableBody = document.querySelector(".table-body");
@@ -20,6 +22,7 @@ function showProducts(products) {
                         </div>
         `
     });
+    axios.get(`${baseURL}/products`);
 }
 
 function showTable(products) {
