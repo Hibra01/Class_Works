@@ -1,0 +1,61 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+#side-bar{
+    width: 300px;
+    height: 100vh;
+    background-color: #16283C;
+}
+
+.side-bar{
+    color: white;
+}
+
+.side-bar .user{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    background-color: #204162;
+    gap: 10px;
+}
+
+.side-bar .user h3 {
+    color: white;
+}
+
+.side-bar .user p {
+    color: green;
+}
+
+.side-bar .user p i{
+    margin-right: 6px;
+}
+
+.side-bar .user img{
+    width: 100px;
+    border-radius: 50%;
+}
+
+.side-bar .bottom .general{
+    padding: 10px;
+}
+
+#general{
+    border-bottom: 1px solid white;
+}
+
+.chooses{
+    padding: 40px 10px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.chooses p i{
+    margin-right: 6px;
+}

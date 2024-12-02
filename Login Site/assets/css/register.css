@@ -1,0 +1,83 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    padding: 10px;
+}
+
+header .logo{
+    width: 50px;
+}
+
+header .logo img{
+    width: 100%;
+}
+
+body{
+    background-image: url("../images/pexels-moose-photos-170195-1037992.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.join-text{
+    width: 20%;
+    margin: 0 auto;
+    font-size: 56px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.join-text .join{
+    color: #C6E7E0;
+}
+
+.join-text .spotify{
+    color: #FDC6C5;
+}
+
+.register-area{
+    width: 60%;
+    height: 600px;
+    margin: 100px auto 0;
+    border: 10px solid #1C4F4A;
+    border-radius: 30px;
+    display: flex;
+}
+
+.left{
+    width: 50%;
+    height: 100%;
+}
+
+.left .text{
+    color: #1C4F4A;
+}
+
+.left video{
+    width: 100%;
+}
+
+.right{
+    width: 50%;
+    height: 100%;
+    padding: 60px 100px;
+    background-color: #1C4F4A;
+}
+
+.right form{
+    color: white;
+}
+
+.right form input{
+    border: none;
+    border-bottom: 1px solid white;
+    background-color: transparent;
+}
+
+.right form input:focus{
+    color: white;
+    background-color: transparent;
+}
