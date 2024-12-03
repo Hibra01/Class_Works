@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .result{
+            width: 360px;
+            height: 50px;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: green;
+            color: white;
+            font-size: large;
+        }
+    </style>
+</head>
+<body>
+    <div id="result" class="result"></div>
+    <br>
+
+    <form>
+        <input id="inputNum" type="number" placeholder="Enter number (0-100):">
+        <button id="submit">Submit</button>
+        <br>
+        <br>
+
+        <span>Your Number: </span><span id="your-num"></span>
+        <br>
+        <br>
+        <span>Computer Number: </span><span id="comp-num"></span>
+    </form>
+    <script src="task.js"></script>
+</body>
+</html>
