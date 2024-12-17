@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header{
+    padding: 30px 0;
+    background-color: orange;
+}
+
+header h1{
+    margin: 0 auto;
+}
+
+#main{
+    padding: 30px 0;
+    background-color: teal;
+}
+
+.todo{
+    max-width: 100%;
+    padding: 20px 30px;
+    border-color: transparent;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: green;
+}
+
+.todo button{
+    background-color: red;
+}
+
+button{
+    padding: 10px 20px;
+    border-color: transparent;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.image-window{
+    width: 300px;
+    height: 200px;
+    /* background-color: green; */
+}
+
+.image-choose{
+    width: 100px;
+}
+
+img{
+    width: 100%;
+}

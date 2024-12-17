@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#race_section{
+    display: flex;
+    justify-content: space-between;
+}
+
+.finish-line{
+    background-color: yellow;
+}
+
+.cars-line{
+    display: flex;
+    flex-direction: column;
+}
+
+img{
+    width: 100px;
+    transition: 1s;
+}
