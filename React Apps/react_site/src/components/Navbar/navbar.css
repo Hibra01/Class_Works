@@ -1,0 +1,12 @@
+a{
+    color: gray;
+    text-decoration: none;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
