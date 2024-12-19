@@ -1,0 +1,9 @@
+.info {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(108, 117, 125);
+    border-radius: 10px;
+    color: white;
+}

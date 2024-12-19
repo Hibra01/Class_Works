@@ -12,12 +12,14 @@ export default function Banner() {
                         <img src={image} alt="image" />
                     </div>
                     <div className="desc">
-                        <p>Business Name or Tagline</p>
+                        <h2>Business Name or Tagline</h2>
                         <p>This is a template that is great for small businesses.
                             It doesn't have too much fancy flare to it, but it
                             makes a great use of the standard Bootstrap core components.
                             Feel free to use this template for any project you want!</p>
-                        <Button></Button>
+                        <Button
+                        buttonContent={"Call to Action!"}
+                        />
                     </div>
                 </div>
             </div>

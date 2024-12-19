@@ -1,0 +1,12 @@
+.card{
+    max-width: 30%;
+    border: 1px solid black;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.button{
+    width: 100%;
+    padding: 10px 20px ;
+    background-color: rgb(247,247,247);
+}
