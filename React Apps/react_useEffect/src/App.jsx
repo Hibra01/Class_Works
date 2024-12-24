@@ -7,7 +7,7 @@ function App() {
 
 
   function getData() {
-    fetch("https://676925b9cbf3d7cefd39c232.mockapi.io/api/fakevatsap")
+    fetch("https://northwind.vercel.app/api/categories")
     .then((res) => res.json())
     .then((data) => setProducts(data))
   }
@@ -25,7 +25,7 @@ function App() {
         <button type="submit" className="btn btn-primary">Submit</button>
       </form>
 
-      <ul>{products.map((a) => <li key={a.id}>{a.message}</li>)}</ul>
+      <ul>{products.map((a) => <li key={a.id}>{a.description}</li>)}</ul>
     </>
   )
 }
