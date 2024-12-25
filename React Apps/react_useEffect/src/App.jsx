@@ -1,31 +1,54 @@
 import { useEffect, useState } from 'react'
 import './App.css'
+import { TrophySpin, Atom, Mosaic } from 'react-loading-indicators'
 
 function App() {
   const [products, setProducts] = useState([])
-  const [inp, setInp] = useState([])
-
-
-  function getData() {
-    fetch("https://northwind.vercel.app/api/categories")
-    .then((res) => res.json())
-    .then((data) => setProducts(data))
-  }
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     getData()
   }, [])
-  
+
+  function getData() {
+    fetch("https://fakestoreapi.com/products")
+      .then((res) => res.json())
+      .then((data) => {
+        setProducts(data)
+        setLoading(false)
+      })
+  }
+
   return (
     <>
-      <form onSubmit={(e) => setProducts()}>
-        <div className="mb-3">
-          <input type="text" value={inp} className="form-control" id="exampleInputPassword1" onChange={(e) => setInp(e.target.value)}/>
-        </div>
-        <button type="submit" className="btn btn-primary">Submit</button>
-      </form>
-
-      <ul>{products.map((a) => <li key={a.id}>{a.description}</li>)}</ul>
+      {
+        loading ?
+          <>
+            <Mosaic color="#32cd32" size="large" text="" textColor="" />
+          </> :
+          <table>
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Image</th>
+                <th>Price</th>
+              </tr>
+            </thead>
+            <tbody>
+              {
+                products.map((p) =>
+                  <tr key={p.id}>
+                    <td>{p.title}</td>
+                    <td>{p.description}</td>
+                    <td><img src={p.image} alt="" /></td>
+                    <td>{p.price}</td>
+                  </tr>
+                )
+              }
+            </tbody>
+          </table>
+      }
     </>
   )
 }
