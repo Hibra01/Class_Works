@@ -13,7 +13,7 @@ export default function Products() {
     }, [])
 
     function getData() {
-        fetch("https://fakestoreapi.com/products")
+        fetch("https://6769264ccbf3d7cefd39c513.mockapi.io/products")
             .then((res) => res.json())
             .then((data) => {
                 setProducts(data)
@@ -30,35 +30,28 @@ export default function Products() {
                             <Mosaic color="#32cd32" size="large" text="" textColor="" />
                         </div>
                     </> :
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Image</th>
-                                <th>Title</th>
-                                <th>Price</th>
-                            </tr>
-                        </thead>
-                        <tbody>
+                    <div className="container text-center">
+                        <div className="row row-cols-3 d-flex justify-content-between row-gap-5">
                             {
                                 products.map((p) =>
-                                    <tr key={p.id}>
-                                        <td><img src={p.image} alt="" /></td>
-                                        <td>{p.title.slice(0, 20)}</td>
-                                        <td>{p.price} $</td>
-                                        <td>
-                                            <Link to={`/details/`} >
-                                                <button>Details</button>
-                                            </Link>
-                                        </td>
-                                    </tr>
+                                    <div className="card" style={{width: "18rem"}} key={p.id}>
+                                        <img src={p.image} className="card-img-top" alt={p.title} style={{height: "300px"}} />
+                                            <div className="card-body">
+                                                <h5 className="card-title">{p.title.slice(0, 20)}...</h5>
+                                                <p className="card-text">{p.description.slice(0, 50)}...</p>
+                                                <Link to={`/details/${p.id}`}>
+                                                <button className='btn btn-success'>Details</button>
+                                                </Link>
+                                                <Link to={`/details/${p.id}`}>
+                                                <button className='btn btn-success'>Delete</button>
+                                                </Link>
+                                            </div>
+                                    </div>
                                 )
                             }
-                        </tbody>
-                    </table>
+                        </div>
+                    </div>
             }
-            <Routes>
-                <Route path='details/' element={<Details />} />
-            </Routes>
         </>
     )
 }

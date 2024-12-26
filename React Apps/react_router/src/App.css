@@ -48,8 +48,8 @@ ul{
 }
 
 table td{
-  width: 200px;
-  height: 200px;
+  width: 100px;
+  height: 100px;
 }
 
 img {
@@ -58,9 +58,6 @@ img {
 }
 
 button{
-  width: 60%;
-  height: 60%;
-  background-color: green;
   cursor: pointer;
 }
 
