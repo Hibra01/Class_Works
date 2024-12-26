@@ -18,6 +18,9 @@ export default function Navbar() {
           <li>
             <Link to="/products">Products</Link>
           </li>
+          <li>
+            <Link to="/add">Add</Link>
+          </li>
         </ul>
       </nav>
     </>

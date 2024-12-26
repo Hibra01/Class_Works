@@ -7,6 +7,7 @@ import ContactPage from './pages/ContactPage'
 import NoPage from './pages/NoPage'
 import Products from './pages/Products'
 import Details from './pages/Details'
+import AddPage from './pages/AddPage'
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             <Route path="about" element={<AboutPage />} />
             <Route path="contact" element={<ContactPage />} />
             <Route path="products" element={<Products />} />
+            <Route path="add" element={<AddPage />} />
             <Route path='details/:id' element={<Details />} />
           </Route>
           <Route path="*" element={<NoPage />} />
