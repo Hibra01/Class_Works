@@ -39,8 +39,6 @@ export default function Details() {
             <div className="card-body">
               <p className="card-text">Title: {product.title}</p>
               <p className="card-text">Description: {product.description}</p>
-              <p className="card-text">Rate: {product.rating.rate}</p>
-              <p className="card-text">Count: {product.rating.count}</p>
               <p className="card-text">Price: {product.price}</p>
             </div>
           </div>

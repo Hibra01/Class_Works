@@ -14,7 +14,7 @@ export default function Products() {
     }, [])
 
     function getData() {
-        axios.get('http://localhost:3000/products')
+        axios.get('https://6769264ccbf3d7cefd39c513.mockapi.io/products')
             .then(response => {
                 setProducts(response.data)
                 setLoading(false)
@@ -26,14 +26,13 @@ export default function Products() {
 
     function deleteItem(elementId) {
         console.log(elementId)
-        axios.delete(`http://localhost:3000/products/${elementId}`)
+        axios.delete(`https://6769264ccbf3d7cefd39c513.mockapi.io/products/${elementId}`)
             .then(response => {
                 console.log("Process: ", response)
                 getData()
             })
             .catch(error => {
-                // console.error('Have someone error: ', error)
-                console.error('Error deleting product: ', error.response ? error.response.data : error.message)
+                console.error('Have someone error: ', error)
             })
     }
 
