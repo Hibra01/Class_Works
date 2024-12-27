@@ -7,6 +7,7 @@ import About from './pages/About/About'
 import ProductList from './pages/AdminPages/ProductList/ProductList'
 import UpdatePage from './pages/AdminPages/UpdatePage/UpdatePage'
 import AddPage from './pages/AdminPages/AddPage/AddPage'
+import Details from './pages/Details/Details'
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
         <Route path="/" element={<UserLayout />}>
           <Route index element={<Products />} />
           <Route path="about" element={<About />} />
+          <Route path="details/:id" element={<Details />} />
           <Route path="*" element={<><h1>Error 404</h1></>} />
         </Route>
 

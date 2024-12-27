@@ -1,0 +1,8 @@
+#navbar{
+    background-color: green;
+}
+
+.navbar ul {
+    display: flex;
+    gap: 30px;
+}

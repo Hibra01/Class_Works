@@ -1,8 +1,13 @@
 import axios from 'axios'
+import { Formik, Field, Form, ErrorMessage } from 'formik'
+import * as Yup from 'yup'
 import React, { useEffect, useState } from 'react'
+import { Mosaic } from 'react-loading-indicators'
+import { Link } from 'react-router-dom'
 
 export default function Products() {
     const [products, setProducts] = useState([])
+    const [loading, setLoading] = useState(true)
 
     useEffect(() => {
         getData()
@@ -11,27 +16,70 @@ export default function Products() {
 
     function getData() {
         axios('https://6769264ccbf3d7cefd39c513.mockapi.io/products')
-            .then((res) => setProducts(res.data))
+            .then((res) => {
+                setProducts(res.data)
+                setLoading(false)
+            })
+    }
+
+    function searchProduct(input) {
+        const filteredProducts = products.filter((p) => p.title.toLowerCase().includes(input.search.toLowerCase()) || p.description.toLowerCase().includes(input.search.toLowerCase()))
+        setProducts(filteredProducts)
     }
 
     return (
-        <div className="continer">
-            <div className="container text-center">
-                <div className="row row-cols-3 d-flex justify-content-between row-gap-5">
-                    {
-                        products.map((p) =>
-                            <div className="card" style={{ width: "18rem" }} key={p.id}>
-                                <img src={p.image} className="card-img-top" alt="..." />
-                                <div className="card-body">
-                                    <h5 className="card-title">{p.title}</h5>
-                                    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <button className='btn btn-success'>Buy</button>
-                                </div>
+        <>
+            {
+                loading ?
+                    <div className='text-center'>
+                        <Mosaic color="#32cd32" size="medium" text="" textColor="" />
+                    </div> :
+                    <>
+                        <div className='container'>
+                            <Formik
+                                initialValues={{ search: '' }}
+                                validationSchema={Yup.object({
+                                    search: Yup.string()
+                                        .required('Required'),
+                                })}
+                                onSubmit={(values) => {
+                                    searchProduct(values)
+                                }}
+                            >
+                                <Form className='d-flex flex-column w-25 m-auto' >
+                                    <label htmlFor="search">Find</label>
+                                    <Field name="search" type="text" />
+                                    <ErrorMessage name="search" />
+
+                                    <button type="submit">Search</button>
+                                </Form>
+                            </Formik>
+                        </div>
+                        <div className="container text-center">
+                            <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
+                                {
+                                    products.map((p) =>
+                                        <div className='col d-flex justify-content-center my-3' key={p.id}>
+                                            <div className="card" style={{ width: "18rem" }}>
+                                                <img src={p.image} className="card-img-top" alt="..." />
+                                                <div className="card-body d-flex flex-column justify-content-between">
+                                                    <h5 className="card-title">{p.title}</h5>
+                                                    <p className="card-text">{p.price} $</p>
+                                                    <div className='d-flex justify-content-center gap-3'>
+                                                        <button className='btn btn-success'>Buy</button>
+                                                        <Link to={`details/${p.id}`}>
+                                                            <button className='btn btn-info'>Details</button>
+                                                        </Link>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    )
+                                }
                             </div>
-                        )
-                    }
-                </div>
-            </div>
-        </div>
+                        </div>
+                    </>
+            }
+        </>
     )
 }

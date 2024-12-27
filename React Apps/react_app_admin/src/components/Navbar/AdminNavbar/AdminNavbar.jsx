@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 export default function AdminNavbar() {
     return (
@@ -10,10 +10,10 @@ export default function AdminNavbar() {
                     <nav>
                         <ul>
                             <li>
-                                <Link to="/admin">Products</Link>
+                                <NavLink to="/admin">Products</NavLink>
                             </li>
                             <li>
-                                <Link to="add">Add</Link>
+                                <NavLink to="add">Add</NavLink>
                             </li>
                         </ul>
                     </nav>
