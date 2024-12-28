@@ -41,18 +41,35 @@ img {
 .game-main {
   height: 80vh;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
 }
 
 table td {
   width: 100px;
   height: 100px;
-  background-color: gray;
+  background-color: green;
   border: 1px solid black;
   cursor: pointer;
+  transition: 0.3s ease;
 }
 
-table td:hover{
+table td:hover {
   transform: scale(1.2);
+}
+
+table td.clicked {
+  transform: scale(1.2);
+}
+
+.tables{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.score{
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
 }
