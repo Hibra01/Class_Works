@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom'
 export default function Products() {
     const [products, setProducts] = useState([])
     const [loading, setLoading] = useState(true)
+    const [search, setsearch] = useState("")
 
     useEffect(() => {
         getData()
@@ -36,29 +37,12 @@ export default function Products() {
                     </div> :
                     <>
                         <div className='container'>
-                            <Formik
-                                initialValues={{ search: '' }}
-                                validationSchema={Yup.object({
-                                    search: Yup.string()
-                                        .required('Required'),
-                                })}
-                                onSubmit={(values) => {
-                                    searchProduct(values)
-                                }}
-                            >
-                                <Form className='d-flex flex-column w-25 m-auto' >
-                                    <label htmlFor="search">Find</label>
-                                    <Field name="search" type="text" />
-                                    <ErrorMessage name="search" />
-
-                                    <button type="submit">Search</button>
-                                </Form>
-                            </Formik>
+                            <input type="text" value={search} onChange={(e => setsearch(e.target.value))} />
                         </div>
                         <div className="container text-center">
                             <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
                                 {
-                                    products.map((p) =>
+                                    products.filter((p) => p.title.toLowerCase().includes(search.toLowerCase()) || p.description.toLowerCase().includes(search.toLowerCase())).map((p) =>
                                         <div className='col d-flex justify-content-center my-3' key={p.id}>
                                             <div className="card" style={{ width: "18rem" }}>
                                                 <img src={p.image} className="card-img-top" alt="..." />
