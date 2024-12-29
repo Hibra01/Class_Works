@@ -73,3 +73,11 @@ table td.clicked {
   font-size: 32px;
   font-weight: bold;
 }
+
+.transparent-table {
+  opacity: 0.5; /* Tabloyu şeffaf yap */
+}
+
+.clicked {
+  background-color: lightgreen; /* Seçilen hücreyi işaretle */
+}
