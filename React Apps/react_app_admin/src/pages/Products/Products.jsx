@@ -43,21 +43,21 @@ export default function Products() {
                             <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
                                 {
                                     products.filter((p) => p.title.toLowerCase().includes(search.toLowerCase()) || p.description.toLowerCase().includes(search.toLowerCase())).map((p) =>
-                                        <div className='col d-flex justify-content-center my-3' key={p.id}>
-                                            <div className="card" style={{ width: "18rem" }}>
-                                                <img src={p.image} className="card-img-top" alt="..." />
-                                                <div className="card-body d-flex flex-column justify-content-between">
-                                                    <h5 className="card-title">{p.title}</h5>
-                                                    <p className="card-text">{p.price} $</p>
-                                                    <div className='d-flex justify-content-center gap-3'>
-                                                        <button className='btn btn-success'>Buy</button>
-                                                        <Link to={`details/${p.id}`}>
-                                                            <button className='btn btn-info'>Details</button>
-                                                        </Link>
+                                            <div className='col d-flex justify-content-center my-3' key={p.id}>
+                                                <div className="card" style={{ width: "18rem" }}>
+                                                    <img src={p.image} className="card-img-top" alt="..." />
+                                                    <div className="card-body d-flex flex-column justify-content-between">
+                                                        <h5 className="card-title">{p.title}</h5>
+                                                        <p className="card-text">{p.price} $</p>
+                                                        <div className='d-flex justify-content-center gap-3'>
+                                                            <button className='btn btn-success'>Buy</button>
+                                                            <Link to={`details/${p.id}`}>
+                                                                <button className='btn btn-info'>Details</button>
+                                                            </Link>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
                                     )
                                 }
                             </div>

@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import { Mosaic } from 'react-loading-indicators'
 import { useParams } from 'react-router-dom'
 
 export default function Details() {
