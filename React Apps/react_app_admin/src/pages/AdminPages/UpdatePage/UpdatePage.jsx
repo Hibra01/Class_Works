@@ -4,8 +4,6 @@ import * as Yup from 'yup'
 import axios from 'axios'
 import { useNavigate, useParams } from 'react-router-dom'
 
-
-
 export default function UpdatePage() {
     const [obj, setObj] = useState()
     const [loading, setLoading] = useState(true)
