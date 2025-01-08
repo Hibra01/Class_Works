@@ -23,7 +23,7 @@ export default function Table({products, deleteFunction}) {
                     products.map((p) => 
                     <tr key={p.id}>
                         <td>{p.id}</td>
-                        <td><img src={p.image} alt="image" /></td>
+                        <td><img src="https://m.media-amazon.com/images/I/71Ls2+M7TSL._AC_UL320_.jpg" alt="image" style={{width: "100px", height: "100px"}} /></td>
                         <td>{p.title}</td>
                         <td>{p.description}</td>
                         <td>{p.price}$</td>

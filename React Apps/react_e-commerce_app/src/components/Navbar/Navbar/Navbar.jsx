@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
+import { BasketContext } from '../../../contexts/BasketProvider'
 
 export default function Navbar() {
+    const { basket } = useContext(BasketContext)
+
     return (
         <>
             <header id='navbar' className='bg-primary-subtle'>
@@ -16,11 +19,14 @@ export default function Navbar() {
 
                         <div className='wishlist-basket d-flex gap-3'>
                             <span>
-                                <i class="fa-regular fa-heart"></i><sup>0</sup>
+                                <i className="fa-regular fa-heart"></i><sup>0</sup>
                             </span>
-                            <span>
-                                <i class="fa-solid fa-basket-shopping"></i><sup>0</sup>
-                            </span>
+
+                            <Link to={'basket'}>
+                                <span>
+                                    <i className="fa-solid fa-basket-shopping"></i><sup>{basket.length}</sup>
+                                </span>
+                            </Link>
                         </div>
                     </div>
                 </div>

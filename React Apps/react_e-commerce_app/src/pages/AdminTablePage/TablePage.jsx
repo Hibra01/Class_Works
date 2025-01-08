@@ -26,7 +26,7 @@ export default function TablePage() {
             </Helmet>
             <section id='table'>
                 <div className="container">
-                    <div className="table" style={{display: loading ? "flex" : false}}>
+                    <div className="table py-5" style={{display: loading ? "flex" : false}}>
                         {
                             loading ?
                                 <div className="spinner-border text-success m-auto" role="status">

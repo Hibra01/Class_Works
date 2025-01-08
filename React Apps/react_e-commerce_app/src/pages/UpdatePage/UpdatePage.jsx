@@ -3,6 +3,7 @@ import { Formik, Field, Form, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
 import axios from 'axios'
 import { useNavigate, useParams } from 'react-router-dom'
+import { getDataById } from '../../services/GetData'
 
 export default function UpdatePage() {
     const [obj, setObj] = useState()
@@ -12,16 +13,8 @@ export default function UpdatePage() {
     const { id } = useParams()
 
     useEffect(() => {
-        getData()
+        getDataById(setObj, setLoading, id)
     }, [])
-
-    function getData() {
-        axios(`https://6769264ccbf3d7cefd39c513.mockapi.io/products/${id}`)
-            .then((res) => {
-                setObj(res.data)
-                setLoading(false)
-            })
-    }
 
     function updateProduct(obj) {
         axios.put(`https://6769264ccbf3d7cefd39c513.mockapi.io/products/${id}`, obj)
@@ -31,7 +24,7 @@ export default function UpdatePage() {
         <>
             <section id='updatePage'>
                 <div className="container">
-                    <div className="updatePage" style={{display: loading ? "flex" : false}}>
+                    <div className="updatePage py-5" style={{display: loading ? "flex" : false}}>
                         {
                             loading ?
                                 <div className="spinner-border text-success m-auto" role="status">

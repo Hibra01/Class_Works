@@ -17,7 +17,7 @@ export default function AddPage() {
     return (
         <section id='addPage'>
             <div className="container">
-                <div className="addPage">
+                <div className="addPage py-5">
                     <Formik
                         initialValues={{ title: "", description: "", image: "", price: "" }}
                         validationSchema={Yup.object({
