@@ -24,7 +24,7 @@ export default function AddPage() {
                             title: Yup.string()
                                 .required('Required'),
                             description: Yup.string()   
-                                .required('Required'),
+                                .required('Required'),  
                             image: Yup.string()
                                 .required('Required'),
                             price: Yup.number()

@@ -10,29 +10,34 @@ import AddPage from './pages/AddPage/AddPage';
 import UpdatePage from './pages/UpdatePage/UpdatePage';
 import BasketProvider from './contexts/BasketProvider';
 import BasketPage from './pages/BasketPage/BasketPage';
+import WishListProvider from './contexts/WishListProvider';
+import WishListPage from './pages/WishListPage/WishListPage';
 
 function App() {
   return (
-    <BasketProvider>
-      <HelmetProvider>
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<MainLayout />}>
-              <Route index element={<HomePage />} />
-              <Route path="basket" element={<BasketPage />} />
-              <Route path="detail/:id" element={<DetailPage />} />
-            </Route>
+    <WishListProvider>
+      <BasketProvider>
+        <HelmetProvider>
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<MainLayout />}>
+                <Route index element={<HomePage />} />
+                <Route path="basket" element={<BasketPage />} />
+                <Route path="wishList" element={<WishListPage />} />
+                <Route path="detail/:id" element={<DetailPage />} />
+              </Route>
 
-            <Route path="/admin" element={<AdminLayout />}>
-              <Route index element={<TablePage />} />
-              <Route path="addPage" element={<AddPage />} />
-              <Route path="updatePage/:id" element={<UpdatePage />} />
-            </Route>
-            <Route path="*" element={<p>Page not found</p>} />
-          </Routes>
-        </BrowserRouter>
-      </HelmetProvider>
-    </BasketProvider>
+              <Route path="/admin" element={<AdminLayout />}>
+                <Route index element={<TablePage />} />
+                <Route path="addPage" element={<AddPage />} />
+                <Route path="updatePage/:id" element={<UpdatePage />} />
+              </Route>
+              <Route path="*" element={<p>Page not found</p>} />
+            </Routes>
+          </BrowserRouter>
+        </HelmetProvider>
+      </BasketProvider>
+    </WishListProvider>
   );
 }
 

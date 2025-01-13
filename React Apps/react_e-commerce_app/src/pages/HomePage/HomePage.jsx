@@ -21,7 +21,7 @@ export default function HomePage() {
                 <div className="container">
                     <div className="home py-5">
                         <div className="container text-center">
-                            <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-md-4 row-gap-5">
+                            <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-gap-4">
                                 {
                                     loading ?
                                         <div className="spinner-border text-success m-auto" role="status">

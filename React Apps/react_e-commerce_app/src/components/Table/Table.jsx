@@ -1,4 +1,3 @@
-import axios from 'axios'
 import React from 'react'
 import { getData } from '../../services/GetData'
 import { Link } from 'react-router-dom'

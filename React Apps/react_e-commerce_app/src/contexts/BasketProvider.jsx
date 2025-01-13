@@ -1,9 +1,10 @@
 import React, { createContext, useState } from 'react'
+import useLocalStorage from '../custom_hooks/useLocalStorage'
 
 export const BasketContext = createContext()
 
 export default function BasketProvider({ children }) {
-    const [basket, setBasket] = useState([])
+    const [basket, setBasket] = useLocalStorage("Basket", [])
 
     const addToBasket = (product) => {
         const existingProduct = basket.find((p) => p.id === product.id)
@@ -19,8 +20,18 @@ export default function BasketProvider({ children }) {
         }
     }
 
-    const removeFromBasket = (productId) => {
-        setBasket((prevBasket) => prevBasket.filter(product => product.id !== productId))
+    const decreaseBasket = (product) => {
+        product.count === 1 ?
+            removeFromBasket(product) :
+            setBasket((prevBasket) =>
+                prevBasket.map((p) =>
+                    p.id === product.id ? { ...p, count: p.count - 1 } : p
+                )
+            )
+    }
+
+    const removeFromBasket = (product) => {
+        setBasket((prevBasket) => prevBasket.filter((p) => p.id !== product.id))
     }
 
     const clearBasket = () => {
@@ -28,7 +39,7 @@ export default function BasketProvider({ children }) {
     }
 
     return (
-        <BasketContext.Provider value={{ basket, addToBasket, removeFromBasket, clearBasket }}>
+        <BasketContext.Provider value={{ basket, addToBasket, decreaseBasket, removeFromBasket, clearBasket }}>
             {children}
         </BasketContext.Provider>
     )
