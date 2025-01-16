@@ -24,17 +24,17 @@ export default function WishListPage() {
                         </thead>
                         <tbody>
                             {
-                                wishList.map((p) =>
-                                    <tr key={p.id}>
-                                        <td>{p.id}</td>
+                                wishList.map((p, index) =>
+                                    <tr key={p._id}>
+                                        <td>{index + 1}</td>
                                         <td>
                                             <img src="https://m.media-amazon.com/images/I/71Ls2+M7TSL._AC_UL320_.jpg" alt={p.title} style={{ width: "100px", height: "100px" }} />
                                         </td>
                                         <td>{p.title}</td>
                                         <td>{p.description}</td>
                                         <td>{p.price}$</td>
-                                        <td><i className="fa-solid fa-cart-plus" style={basket.some((product) => product.id === p.id) ? { fontSize: '24px', color: 'green', cursor: 'pointer' } : { fontSize: '24px', color: '#007bff', cursor: 'pointer' }} onClick={() => addToBasket(p)}></i></td>
-                                        <td><i className={wishList.some((p) => p.id === p.id) ? "fa-solid fa-heart" : "fa-regular fa-heart"} style={{ fontSize: '24px', color: 'red', cursor: 'pointer' }} onClick={() => addToWishList(p)}></i></td>
+                                        <td><i className="fa-solid fa-cart-plus" style={basket.some((product) => product._id === p._id) ? { fontSize: '24px', color: 'green', cursor: 'pointer' } : { fontSize: '24px', color: '#007bff', cursor: 'pointer' }} onClick={() => addToBasket(p)}></i></td>
+                                        <td><i className={wishList.some((product) => product._id === p._id) ? "fa-solid fa-heart" : "fa-regular fa-heart"} style={{ fontSize: '24px', color: 'red', cursor: 'pointer' }} onClick={() => addToWishList(p)}></i></td>
                                     </tr>
                                 )
                             }

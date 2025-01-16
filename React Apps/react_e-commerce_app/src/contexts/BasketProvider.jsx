@@ -7,12 +7,12 @@ export default function BasketProvider({ children }) {
     const [basket, setBasket] = useLocalStorage("Basket", [])
 
     const addToBasket = (product) => {
-        const existingProduct = basket.find((p) => p.id === product.id)
+        const existingProduct = basket.find((p) => p._id === product._id)
 
         if (existingProduct) {
             setBasket((prevBasket) =>
                 prevBasket.map((p) =>
-                    p.id === product.id ? { ...p, count: p.count + 1 } : p
+                    p._id === product._id ? { ...p, count: p.count + 1 } : p
                 )
             )
         } else {
@@ -25,13 +25,13 @@ export default function BasketProvider({ children }) {
             removeFromBasket(product) :
             setBasket((prevBasket) =>
                 prevBasket.map((p) =>
-                    p.id === product.id ? { ...p, count: p.count - 1 } : p
+                    p._id === product._id ? { ...p, count: p.count - 1 } : p
                 )
             )
     }
 
     const removeFromBasket = (product) => {
-        setBasket((prevBasket) => prevBasket.filter((p) => p.id !== product.id))
+        setBasket((prevBasket) => prevBasket.filter((p) => p._id !== product._id))
     }
 
     const clearBasket = () => {

@@ -8,7 +8,6 @@ import link from '../../services/link'
 export default function TablePage() {
     const [products, setProducts] = useState([])
     const [loading, setLoading] = useState(true)
-    console.log(link)
 
     const handleDelete = async (id) => {
         setLoading(true)
@@ -28,7 +27,7 @@ export default function TablePage() {
             </Helmet>
             <section id='table'>
                 <div className="container">
-                    <div className="table py-5" style={{display: loading ? "flex" : false}}>
+                    <div className="table py-5" style={{ display: loading ? "flex" : false }}>
                         {
                             loading ?
                                 <div className="spinner-border text-success m-auto" role="status">

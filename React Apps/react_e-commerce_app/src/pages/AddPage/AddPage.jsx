@@ -3,9 +3,10 @@ import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import link from '../../services/link';
 
 function addProduct(obj) {
-    axios.post('https://6769264ccbf3d7cefd39c513.mockapi.io/products', obj)
+    axios.post(link, obj)
         .then(function (response) {
             console.log(response)
         })
@@ -36,20 +37,20 @@ export default function AddPage() {
                         }}
                     >
                         <Form className='d-flex flex-column w-25 m-auto' >
-                            <label htmlFor="title">Title</label>
+                            <label className='mt-3' htmlFor="title">Title</label>
                             <Field name="title" type="text" />
                             <ErrorMessage name="title" />
 
-                            <label htmlFor="description">Description</label>
+                            <label className='mt-3' htmlFor="description">Description</label>
                             <Field name="description" type="text" />
 
-                            <label htmlFor="image">Image</label>
+                            <label className='mt-3' htmlFor="image">Image</label>
                             <Field name="image" type="text" />
 
-                            <label htmlFor="price">Price</label>
+                            <label className='mt-3' htmlFor="price">Price</label>
                             <Field name="price" type="number" />
 
-                            <button type="submit">Submit</button>
+                            <button className='mt-3' type="submit">Submit</button>
                         </Form>
                     </Formik>
                 </div>

@@ -3,6 +3,8 @@ import { BasketContext } from '../../contexts/BasketProvider'
 
 export default function BasketPage() {
     const { basket, addToBasket, decreaseBasket, removeFromBasket, clearBasket } = useContext(BasketContext)
+    let total = 0
+    { basket.map((p) => total += p.count * p.price) }
 
     return (
         <section id='basket-table'>
@@ -24,9 +26,9 @@ export default function BasketPage() {
                         </thead>
                         <tbody>
                             {
-                                basket.map((p) =>
-                                    <tr key={p.id}>
-                                        <td>{p.id}</td>
+                                basket.map((p, index) =>
+                                    <tr key={p._id}>
+                                        <td>{index + 1}</td>
                                         <td>
                                             <img src="https://m.media-amazon.com/images/I/71Ls2+M7TSL._AC_UL320_.jpg" alt={p.title} style={{ width: "100px", height: "100px" }} />
                                         </td>
@@ -37,11 +39,23 @@ export default function BasketPage() {
                                         <td><button className='btn btn-success' onClick={() => addToBasket(p)}>+</button></td>
                                         <td>{p.price}$</td>
                                         <td><button className='btn btn-danger' onClick={() => removeFromBasket(p)}><i className="fa-solid fa-trash"></i></button></td>
-                                        {/* <td><button onClick={() => removeFromBasket(p.id)}><i className="fa-solid fa-trash"></i></button></td> */}
                                     </tr>
                                 )
                             }
                         </tbody>
+                        <tfoot>
+                            <tr>
+                                <td>Total:</td>
+                                <td>{total} $</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tfoot>
                     </table>
                 </div>
             </div>

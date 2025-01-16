@@ -7,8 +7,8 @@ export default function WishListProvider({ children }) {
   const [wishList, setWishList] = useLocalStorage("WishList", [])
 
   const addToWishList = (product) => {
-    wishList.find((p) => p.id === product.id) ?
-      setWishList((prevBasket) => prevBasket.filter((p) => p.id !== product.id))
+    wishList.find((p) => p._id === product._id) ?
+      setWishList((prevBasket) => prevBasket.filter((p) => p._id !== product._id))
       : setWishList((prevList) => [...prevList, product])
   }
 

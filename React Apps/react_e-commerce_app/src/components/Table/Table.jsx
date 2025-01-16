@@ -19,15 +19,15 @@ export default function Table({products, deleteFunction}) {
             </thead>
             <tbody>
                 {
-                    products.map((p) => 
-                    <tr key={p.id}>
-                        <td>{p.id}</td>
+                    products.map((p, index) =>
+                    <tr key={p._id}>
+                        <td>{index + 1}</td>
                         <td><img src="https://m.media-amazon.com/images/I/71Ls2+M7TSL._AC_UL320_.jpg" alt="image" style={{width: "100px", height: "100px"}} /></td>
                         <td>{p.title}</td>
                         <td>{p.description}</td>
                         <td>{p.price}$</td>
-                        <td><Link to={`updatePage/${p.id}`}><button>Edit</button></Link></td>
-                        <td><button onClick={() => deleteFunction(p.id)}><i className="fa-solid fa-trash"></i></button></td>
+                        <td><Link to={`updatePage/${p._id}`}><button>Edit</button></Link></td>
+                        <td><button onClick={() => deleteFunction(p._id)}><i className="fa-solid fa-trash"></i></button></td>
                     </tr>
                     )
                 }

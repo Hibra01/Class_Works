@@ -26,7 +26,7 @@ export default function HomePage() {
                                     loading ?
                                         <div className="spinner-border text-success m-auto" role="status">
                                         </div> :
-                                        products.map((p) => <Card product={p} key={p.id} />)
+                                        products.map((p) => <Card product={p} key={p._id} />)
                                 }
                             </div>
                         </div>

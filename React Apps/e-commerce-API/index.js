@@ -1,6 +1,11 @@
 const fakedb = require('./data.js')
+const mongoose = require('mongoose');
 const express = require('express')
 const cors = require('cors')
+
+mongoose.connect('mongodb+srv://huseynvibp109:huseynvibp109@cluster0.pwcxj.mongodb.net/')
+    .then(() => console.log("Data Base connected"))
+    .catch(err => console.log(err))
 
 const port = 3000
 
@@ -9,33 +14,42 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 
-app.get('/products', (req, res) => {
-    res.send(fakedb)
+const productSchema = new mongoose.Schema({
+    title: String,
+    description: String,
+    price: String,
+    image: String
 })
 
-app.get('/products/:id', (req, res) => {
+const productModel = mongoose.model('product', productSchema)
+
+app.get('/products', async (req, res) => {
+    const data = await productModel.find()
+    res.send(data)
+})
+
+app.get('/products/:id', async (req, res) => {
     const { id } = req.params
-    const element = fakedb.find((p) => p.id === +id)
-    if (element) {
-        res.send(element)
-    } else {
-        res.status(400).send("Bad request")
-    }
+    const data = await productModel.findById(id)
+    res.send(data)
 })
 
-app.post('/products', (req, res) => {
-    fakedb.push(req.body)
+app.post('/products', async (req, res) => {
+    const post = await productModel(req.body)
+    post.save()
     res.send("post res")
 })
 
-app.put('/products', (req, res) => {
-    res.send("put res")
+app.put('/products/:id', async (req, res) => {
+    const { id } = req.params
+    const data = await productModel.findByIdAndUpdate(id, req.body)
+    res.send(data)
 })
 
-app.delete('/products/:id', (req, res) => {
+app.delete('/products/:id', async (req, res) => {
     const { id } = req.params
-    fakedb = fakedb.filter((p) => p.id !== +id)
-    res.send("deleted")
+    const data = await productModel.findByIdAndDelete(id)
+    res.send(data)
 })
 
 app.listen(port, () => {
