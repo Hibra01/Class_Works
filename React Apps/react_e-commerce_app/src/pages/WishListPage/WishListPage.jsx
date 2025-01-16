@@ -3,7 +3,7 @@ import { WishListContext } from '../../contexts/WishListProvider'
 import { BasketContext } from '../../contexts/BasketProvider'
 
 export default function WishListPage() {
-    const { wishList, addToWishList, removeFromWishList } = useContext(WishListContext)
+    const { wishList, addToWishList } = useContext(WishListContext)
     const { basket, addToBasket } = useContext(BasketContext)
 
     return (
@@ -34,7 +34,7 @@ export default function WishListPage() {
                                         <td>{p.description}</td>
                                         <td>{p.price}$</td>
                                         <td><i className="fa-solid fa-cart-plus" style={basket.some((product) => product.id === p.id) ? { fontSize: '24px', color: 'green', cursor: 'pointer' } : { fontSize: '24px', color: '#007bff', cursor: 'pointer' }} onClick={() => addToBasket(p)}></i></td>
-                                        <td><button className='btn btn-danger' onClick={() => removeFromWishList(p)}><i className="fa-solid fa-trash"></i></button></td>
+                                        <td><i className={wishList.some((p) => p.id === p.id) ? "fa-solid fa-heart" : "fa-regular fa-heart"} style={{ fontSize: '24px', color: 'red', cursor: 'pointer' }} onClick={() => addToWishList(p)}></i></td>
                                     </tr>
                                 )
                             }

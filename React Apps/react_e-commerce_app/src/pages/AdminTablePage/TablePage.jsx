@@ -3,14 +3,16 @@ import { Helmet } from 'react-helmet-async'
 import Table from '../../components/Table/Table'
 import { getData } from '../../services/GetData'
 import axios from 'axios'
+import link from '../../services/link'
 
 export default function TablePage() {
     const [products, setProducts] = useState([])
     const [loading, setLoading] = useState(true)
+    console.log(link)
 
     const handleDelete = async (id) => {
         setLoading(true)
-        await axios.delete(`https://6769264ccbf3d7cefd39c513.mockapi.io/products/${id}`)
+        await axios.delete(`${link}/${id}`)
         getData(setProducts, setLoading)
     }
 

@@ -8,16 +8,12 @@ export default function WishListProvider({ children }) {
 
   const addToWishList = (product) => {
     wishList.find((p) => p.id === product.id) ?
-      removeFromWishList(product)
+      setWishList((prevBasket) => prevBasket.filter((p) => p.id !== product.id))
       : setWishList((prevList) => [...prevList, product])
   }
 
-  const removeFromWishList = (product) => {
-    setWishList((prevBasket) => prevBasket.filter((p) => p.id !== product.id))
-  }
-
   return (
-    <WishListContext.Provider value={{ wishList, setWishList, addToWishList, removeFromWishList }}>
+    <WishListContext.Provider value={{ wishList, setWishList, addToWishList }}>
       {children}
     </WishListContext.Provider>
   )
